@@ -1,0 +1,22 @@
+{
+  "name": "millions",
+  "version": "1.0.0",
+  "description": "qui veut gagner des millions",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "author": "Paul",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.2.3",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.lagraulacorp.millions",
+    "win": {
+      "target": "portable"
+    }
+  }
+}
