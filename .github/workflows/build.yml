@@ -21,12 +21,12 @@ jobs:
 
       - name: Build/release Electron app
           uses: samuelmeuli/action-electron-builder@v1
-	  with:
-	    # GitHub token, automatically provided to the action
-	    # (No need to define this secret in the repo settings)
-	    github_token: ${{ secrets.github_token }}
+          with:
+            # GitHub token, automatically provided to the action
+            # (No need to define this secret in the repo settings)
+            github_token: ${{ secrets.github_token }}
 
-	# Add a new step to capture the name of the generated executable
+      # Add a new step to capture the name of the generated executable
       - name: Get Executable Name
         run: echo "::set-output name=executable_name::$(find . -type f -name '*.exe' -printf '%f\n')"
 
