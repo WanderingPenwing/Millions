@@ -7,6 +7,8 @@ Une application de Paul Lagraula
 L'executable est disponible au téléchargement dans le dernier workflow valide à cette adresse :
 https://github.com/WanderingPenwing/Millions/actions/workflows/build.yml
 (en bas de la page du workflow dans la section Artifacts)
+  
+Il suffit ensuite de télécharger le zip, qui contient un executable portable.
 
 # Utilisation
   
