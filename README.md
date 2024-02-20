@@ -2,6 +2,12 @@
 
 Une application de Paul Lagraula
 
+# Installation
+
+L'executable est disponible au téléchargement dans le dernier workflow valide à cette adresse :
+https://github.com/WanderingPenwing/Millions/actions/workflows/build.yml
+(en bas de la page du workflow dans la section Artifacts)
+
 # Utilisation
   
 Le jeu charge une banque de questions (questions.js par défaut) dans le répertoire "js". Ce fichier contient les ensembles de questions des différents jeux chargés. Au démarrage de l'application, l'utilisateur peut séléctionner le jeu qu'il souhaite lancer (différentes collections de questions).
