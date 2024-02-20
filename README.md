@@ -12,7 +12,7 @@ Le jeu charge une banque de questions (questions.js par défaut) dans le répert
 Ces questions, ont été collectés par un script Python localisé dans /util. Pour les mettre à jour, il suffit d'executer ce script.
 
 Le script python retourne simplement un tableau de "jeux". Il peut être modifié pour intégrer plusieurs jeux (collections de questions). 
-  
+```
 {
     "games" : [
         {
@@ -23,9 +23,10 @@ Le script python retourne simplement un tableau de "jeux". Il peut être modifi�
         }, ...
     ]
 }
+```
   
 Chaque liste de questions, contient des éléments qui ontl e format suivant :
-  
+```
 {
     "question" : "Qu'est-ce que l'Aurore boréale est communément appelée ?",
     "content" : [
@@ -36,6 +37,7 @@ Chaque liste de questions, contient des éléments qui ontl e format suivant :
     ],
     "correct" : 1
 }
+```
   
 "question" : énoncé de la question
 "content" : textes de réponses possibles. Il doit avoir une longueur de 4 (4 choix multiples).
