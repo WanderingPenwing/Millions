@@ -25,15 +25,13 @@ jobs:
           # GitHub token, automatically provided to the action
           # (No need to define this secret in the repo settings)
           github_token: ${{ secrets.github_token }}
+      
+      - name: Check Files
+        run: ls dist/
 
-      # Add a new step to capture the name of the generated executable
-      - name: Get Executable Name
-        run: echo "::set-output name=executable_name::$(find . -type f -name '*.exe' -printf '%f\n')"
-
-      # Add a new step to upload the built executable as an artifact
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
           name: electron-app
-          path: ${{ steps.electron-builder.outputs.executable_name }}
+          path: dist/*.exe
 
