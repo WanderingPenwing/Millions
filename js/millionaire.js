@@ -46,7 +46,7 @@ var MillionaireModel = function(data) {
 	var self = this;
 
 	// The 15 questions of this game
-	this.questions = data.questions;
+	this.questions = data;
 
 	// A flag to keep multiple selections
 	// out while transitioning levels
@@ -167,7 +167,7 @@ var MillionaireModel = function(data) {
 // the start game functionality to trigger a game model
 // being created
 document.addEventListener("DOMContentLoaded", function() {
-  var data = questions;
+  var data = questions_collections;
 
   // Process the data as needed
   for (var i = 0; i < data.length; i++) {
@@ -180,10 +180,21 @@ document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("pre-start").style.display = "block";
   document.getElementById("start").addEventListener("click", function() {
 	var index = parseInt(document.getElementById("problem-set").value) - 1;
-	var millionaireModel = new MillionaireModel(data[index]);
+	var millionaireModel = new MillionaireModel(shuffle(data[index].questions));
 	ko.applyBindings(millionaireModel);
 	document.getElementById("pre-start").style.display = "none";
 	startSound('background', true);
 	document.getElementById("game").style.display = "block";
   });
 });
+
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array; // Return the shuffled array
+}

@@ -1,4 +1,4 @@
-const questions = [
+const questions_collections = [
 		{
 			"questions": [
 				{
