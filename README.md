@@ -1,32 +1,31 @@
-Utilisation
+# Qui veut gagner des millions ?
 
-Le jeu charge une banque de questions (questions.json par défaut) dans le même répertoire racine qu'index.html. Ce fichier contient les ensembles de questions du jeu décrits dans la section suivante.
+Une application de Paul Lagraula
 
-Scraping / Banque de questions
-Pour faciliter la collecte de questions, j'ai inclus un script Python dans /util 
+# Utilisation
+  
+Le jeu charge une banque de questions (questions.js par défaut) dans le répertoire "js". Ce fichier contient les ensembles de questions des différents jeux chargés. Au démarrage de l'application, l'utilisateur peut séléctionner le jeu qu'il souhaite lancer (différentes collections de questions).
 
-Le répertoire racine contient questions.json, qui est le fichier principal de questions. Le programme ne lit que questions.json.
 
-Format des questions
-La banque de questions est simplement un tableau de "jeux". Vous pouvez en avoir autant que vous le souhaitez. Vous les sélectionnez au début du chargement de index.html.
+# Modification 
 
-json
-Copy code
+Ces questions, ont été collectés par un script Python localisé dans /util. Pour les mettre à jour, il suffit d'executer ce script.
+
+Le script python retourne simplement un tableau de "jeux". Il peut être modifié pour intégrer plusieurs jeux (collections de questions). 
+  
 {
     "games" : [
         {
-            "questions" : [ ... ]
+            "questions" : [ ... ] #jeu 1
         },
         {
-            "questions" : [ ... ]
+            "questions" : [ ... ] #jeu 2
         }, ...
     ]
 }
-Chaque tableau de questions a le format suivant.
-
-"content" est la clé pour les textes de réponses possibles. "content" doit avoir une longueur de 4 (4 choix multiples).
-Le texte de l'énoncé de la question est situé dans la clé "question".
-L'index basé sur zéro de la valeur dans "content" qui est la réponse correcte est situé dans la clé "correct".json
+  
+Chaque liste de questions, contient des éléments qui ontl e format suivant :
+  
 {
     "question" : "Qu'est-ce que l'Aurore boréale est communément appelée ?",
     "content" : [
@@ -37,5 +36,12 @@ L'index basé sur zéro de la valeur dans "content" qui est la réponse correcte
     ],
     "correct" : 1
 }
+  
+"question" : énoncé de la question
+"content" : textes de réponses possibles. Il doit avoir une longueur de 4 (4 choix multiples).
+"correct" : index (basé sur zéro) de la réponse correcte (correspondant au "content")
+
+
+# Credits
 
 Les sons et images utilisés de Qui Veut Gagner des Millions. Les matériaux sont utilisés dans le cadre de l'utilisation équitable à des fins académiques et éducatives, et ne doivent pas être redistribués sans permission de leurs créateurs.
